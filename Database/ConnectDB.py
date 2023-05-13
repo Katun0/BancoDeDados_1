@@ -22,6 +22,8 @@ def __connect_db():
             if option == 'S':
                 print("Tabela Funcionarios criada com sucesso !")
                 createTable.create_Table(connection)
+            else:
+                print("Tabla funcionarios não foi criada !")
     else:
         raise sqlite3.DatabaseError("Banco de dados não selecionado !")
 
