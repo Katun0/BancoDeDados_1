@@ -10,23 +10,21 @@ def __connect_db():
     path = os.path.dirname(os.path.abspath(__file__))
     full_path = os.path.join(path, database)
 
-    print(f"Buscando banco de dados: {database}")
-
     if not os.path.isfile(full_path):
         createdb = input(f"Banco de dados não encontrado, deseja criar um novo arquivo SQlite ? [S/N]: ")
         
+        if createdb.upper() == 'S':
+                option = input("Banco de dados criado com sucesso, deseja criar a tabela 'funcionários ? '")
+                if option == 'S':
+                    print("Tabela Funcionarios criada com sucesso !")
+                    createTable.create_Table(connection)
+                else:
+                    print("Tabela funcionarios não foi criada !")
+        else:
+            raise sqlite3.DatabaseError("Banco de dados não selecionado !")
+
     connection = sqlite3.connect(full_path)
-
-    if createdb.upper() == 'S':
-            option = input("Banco de dados criado com sucesso, deseja criar a tabela 'funcionários ? '")
-            if option == 'S':
-                print("Tabela Funcionarios criada com sucesso !")
-                createTable.create_Table(connection)
-            else:
-                print("Tabla funcionarios não foi criada !")
-    else:
-        raise sqlite3.DatabaseError("Banco de dados não selecionado !")
-
+    
     return connection
     
 

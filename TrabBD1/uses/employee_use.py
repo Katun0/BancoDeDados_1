@@ -18,7 +18,7 @@ def __getBy_ID(employeeID):
     return employees
 
 
-def __insert_into(name, date, salary):
+def insert_into(name, date, salary):
     employees_CRUD.__insert(name, date, salary)
 
 
