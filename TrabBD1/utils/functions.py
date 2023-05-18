@@ -5,11 +5,10 @@ def __title(message):
     print("*" * len(message))
     print(message)
     print("*" * len(message))
-    
+  
 
 def __clean():
     os.system('cls' if os.name == 'nt' else 'clear')
-
 
 def __stop():
     input('Pressione ENTER para continuar...')

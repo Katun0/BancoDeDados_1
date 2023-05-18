@@ -42,12 +42,19 @@ def __menu():
             case 2:
                 functions.__title("Cadastro de funcionarios")
                 exit = input("Se a opção escolhida não é a desejada, digite 'sair', se não for o seu caso, aperte enter: \n")
-                
+                functions.__clean()
                 
                 if exit.upper() == 'SAIR':
-                    print("Saindo da opção e retornando ao menu principal...")
-                    sleep(5)
-                    functions.__stop()
+                    print("Retornando ao menu principal.")
+                    sleep(1)
+                    functions.__clean()
+                    print("Retornando ao menu principal..")
+                    sleep(1)
+                    functions.__clean()
+                    print("Retornando ao menu principal...")
+                    sleep(1)
+                    functions.__clean()
+
                 else:
                     name = str(input("Digite o nome do funcionário que deseja cadastrar: "))
                     print("\n")
@@ -67,16 +74,23 @@ def __menu():
                     except:
                         print("Não foi possível realizar o cadastro !\n")
                 
-                functions.__stop()
+                    functions.__stop()
                         
             case 3:
                 functions.__title("Busca de funcionarios por Nome, Salario ou Data de Nascimento")
                 exit = input("Se a opção escolhida não é a desejada, digite 'sair', se não for o seu caso, aperte enter: \n")
-                
+                functions.__clean()
+
                 if exit.upper() == 'SAIR':
+                    print("Retornando ao menu principal.")
+                    sleep(1)
+                    functions.__clean()
+                    print("Retornando ao menu principal..")
+                    sleep(1)
+                    functions.__clean()
                     print("Retornando ao menu principal...")
-                    sleep(5)
-                    functions.__stop()
+                    sleep(1)
+                    functions.__clean()
                     
                 else:
                     
@@ -92,11 +106,18 @@ def __menu():
             case 4:
                 functions.__title("Buscar funcionario por ID")
                 exit = input("Se a opção escolhida não é a desejada, digite 'sair', se não for o seu caso, aperte enter: \n")
+                functions.__clean()
                 
                 if exit.upper() == "SAIR":
+                    print("Retornando ao menu principal.")
+                    sleep(1)
+                    functions.__clean()
+                    print("Retornando ao menu principal..")
+                    sleep(1)
+                    functions.__clean()
                     print("Retornando ao menu principal...")
-                    sleep(5)
-                    functions.__stop()
+                    sleep(1)
+                    functions.__clean()
                 else:
                     employeeID = functions.__parse_input_int("Digite o ID de busca do funcionario: ")
 
@@ -105,37 +126,53 @@ def __menu():
                     print('\n')
                     functions.__print_table(employee)
                     print('\n')
-                functions.__stop()
+
+                    functions.__stop()
             
             case 5:
                 functions.__title("Deletar um Registro")
-                exit = input("Se a opção escolhida não é a desejada, digite 'sair': \n")
+                exit = input("Se a opção escolhida não é a desejada, digite 'sair', se não for o seu caso, aperte enter: \n")
+                functions.__clean()
 
                 if exit.upper() == 'SAIR':
+                    print("Retornando ao menu principal.")
+                    sleep(1)
+                    functions.__clean()
+                    print("Retornando ao menu principal..")
+                    sleep(1)
+                    functions.__clean()
                     print("Retornando ao menu principal...")
-                    sleep(5)
-                    functions.__stop()
-                    
+                    sleep(1)
+                    functions.__clean()
+
                 else:
                     functions.__title("Exclusão de Funcionário")
                     
                     employeeID = functions.__parse_input_int("Digite o ID do funcionario que deseja excluir: ")
 
-                try:
-                    employee_use.__delete(employeeID)
-                    print("Funcionário deletado com sucesso \n")
-                except:
-                    print("Não foi possível excluir o registro \n")
+                    try:
+                        employee_use.__delete(employeeID)
+                        print("Funcionário deletado com sucesso \n")
+                    except:
+                        print("Não foi possível excluir o registro \n")
                 
-                functions.__stop()
+                    functions.__stop()
 
             case 6:
                 functions.__title("Atualizar um registro")
-                exit = input("Se a opção escolhida não é a desejada, digite 'sair': \n")
+                exit = input("Se a opção escolhida não é a desejada, digite 'sair', se não for o seu caso, aperte enter: \n")
+                functions.__clean()
+
                 if exit.upper() == 'SAIR':
+                    print("Retornando ao menu principal.")
+                    sleep(1)
+                    functions.__clean()
+                    print("Retornando ao menu principal..")
+                    sleep(1)
+                    functions.__clean()
                     print("Retornando ao menu principal...")
-                    sleep(5)
-                    functions.__stop()
+                    sleep(1)
+                    functions.__clean()
                     
                 else:
                     employeeID = functions.__parse_input_int("Digite o ID do funcionario que deseja alterar: ")
@@ -157,5 +194,5 @@ def __menu():
                     else:
                         print('\nFuncionário não encontrado\n')
 
-                functions.__stop()
+                    functions.__stop()
             
