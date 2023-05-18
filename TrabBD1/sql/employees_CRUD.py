@@ -107,9 +107,9 @@ def __update_table(employee_id, name, date, salary):
     UPDATE funcionarios SET
         nome = '{name}',
         data_nascimento = '{date}',
-        salario = '{salary}',
-    WHERE id={employee_id}
-"""
+        salario = '{salary}'
+        WHERE id={employee_id}
+    """
     cursor.execute(sql_command)
     db.commit()
 

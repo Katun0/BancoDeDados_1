@@ -29,7 +29,6 @@ def __print_table(employees):
 
 
 
-
 def __parse_input_int(message):
   value = None
 
@@ -42,6 +41,7 @@ def __parse_input_int(message):
   
   return value
 
+
 def __parse_input_float(message):
   value = None
 
@@ -53,6 +53,7 @@ def __parse_input_float(message):
       value = None
   
   return value
+
 
 def __parse_input_date(message):
   value = None
@@ -71,15 +72,15 @@ def __parse_input_date(message):
 
 def get_employee_fields_to_upate(employee):
   fields = [
-    { "employee_field": "name", "message": "do nome", "type": "string" },
-    { "employee_field": "born_date", "message": "da data de nascimento", "type": "date" },
-    { "employee_field": "salary", "message": "do salário", "type": "float" },
+    { "employee_field": "nome", "message": "do nome", "type": "string" },
+    { "employee_field": "data_nascimento", "message": "da data de nascimento", "type": "date" },
+    { "employee_field": "salario", "message": "do salário", "type": "float" },
   ]
   
   newEmployee = {
-    "name": employee[0][1],
-    "born_date": employee[0][2],
-    "salary": employee[0][3],
+    "nome": employee[0][1],
+    "data_nascimento": employee[0][2],
+    "salario": employee[0][3],
   }
 
   print('\n')
@@ -87,12 +88,13 @@ def get_employee_fields_to_upate(employee):
   print('\n')
 
   for field in fields:
-    choice = input(f'Deseja manter o mesmo valor {field["message"]} [S/N]\n')
+    user_input = input(f'Deseja manter o mesmo valor {field["message"]} (S/N)\n')
 
-    if choice.upper() == 'N':
+    if user_input.lower() != 's':
       new_value_message = f'Digite o novo valor {field["message"]}'
       new_value = None
-      if field["type"] == 'date':
+
+      if field["type"] == 'data_nascimento':
         print('\n')
         new_value = __parse_input_date(new_value_message)
       elif field["type"] == 'float':
@@ -100,12 +102,9 @@ def get_employee_fields_to_upate(employee):
         new_value = __parse_input_float(new_value_message)
       else:
         new_value = input(f'\n{new_value_message}\n')
+      
       newEmployee[field["employee_field"]] = new_value
-    elif choice.upper() == 'S':
-        print('\n')
-        print(f'{field["message"]} não será alterado')
-    else:
-        print(f"{choice} não é reconhecido como uma opção")
+    
     print('\n')
 
   return newEmployee

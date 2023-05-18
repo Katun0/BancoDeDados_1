@@ -145,15 +145,17 @@ def __menu():
                         newEmployee = functions.get_employee_fields_to_upate(employee)
 
                         try:
-                            employee_use.__update(
-                            employeeID,
-                            newEmployee["name"],
-                            newEmployee["born_date"],
-                            newEmployee["salary"],)
-
+                            employee_use.update(
+                                employeeID,
+                                newEmployee["nome"],
+                                newEmployee["data_nascimento"],
+                                newEmployee["salario"],
+                                )
                             print('Funcionário alterado com sucesso\n')
                         except:
                             print('\nErro ao alterar funcionário\n')
                     else:
                         print('\nFuncionário não encontrado\n')
+
                 functions.__stop()
+            

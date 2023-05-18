@@ -31,8 +31,8 @@ def __delete(employeeID):
         employees_CRUD.__delete_id(employeeID)
 
 
-def __update(employeeID, name, date, salary):
-    employee = employees_CRUD.__update_table(employeeID)
+def update(employeeID, name, date, salary):
+    employee = employees_CRUD.__get_by_id(employeeID)
 
     if not employee:
         raise SystemError("ERRO: FUNCIONARIO NÃO REGISTRADO")
