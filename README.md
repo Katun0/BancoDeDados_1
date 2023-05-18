@@ -19,3 +19,8 @@ Qualidade e organização do código (modularização, legibilidade, boas práti
 Usabilidade geral e experiência do usuário (UX): 1 ponto
 Robustez: Tratamento de erros, verificações no tratamento dos dados, resiliência a condições diversas, etc: 1 ponto
 Diferenciais (interface de usuário, entrada de dados, etc): 1 ponto
+
+
+Como rodar o programa:
+
+Acesse o diretório TrabBD1 e execute o arquivo main.py
