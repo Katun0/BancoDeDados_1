@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
         $stmt = $conn->prepare('INSERT INTO produtos (descricao_prd,data_cadastro,preco,ativo,unidade,tipo_comissao,codigo_ctg,foto) 
 								VALUES(:descricao_prd, :data_cadastro, :preco, :ativo, :unidade, :tipo_comissao, :codigo_ctg, :foto)');
 
-		$foto = file_get_contents(empty($_FILES["foto"]["tmp_name"]) ? "default.png" : $_FILES["foto"]["tmp_name"]);
+		$foto = file_get_contents(empty($_FILES["foto"]["tmp_name"]) ? "default.pjpg" : $_FILES["foto"]["tmp_name"]);
 		
         $stmt->execute([
 			":descricao_prd" => $_POST["descricao_prd"],
