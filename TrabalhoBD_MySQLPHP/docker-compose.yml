@@ -1,0 +1,32 @@
+version: '3'
+services:
+  db: 
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=crud_produtos
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    ports:
+      - 3306:3306
+    volumes:
+      - "./db:/docker-entrypoint-initdb.d"
+  www:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PHP_EXTENSION_INSTALL=mysqli
+        - PHP_EXTENSION_ENABLE=mysqli
+    volumes:
+      - "./:/var/www/html"
+    ports:
+      - 80:80
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8001:80
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
