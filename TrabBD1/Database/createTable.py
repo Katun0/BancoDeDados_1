@@ -1,8 +1,9 @@
 
+
 def create_Table(connection):
     cursor = connection.cursor()
 
-    sql_command ="""
+    sql_command = """
         CREATE TABLE IF NOT EXISTS funcionarios(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome TEXT,
